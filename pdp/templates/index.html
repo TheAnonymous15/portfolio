@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>HCKR | Ethical Hacker</title>
+    {% load static %}
+    <link rel ="stylesheet" href="{% static 'css/cyberw.css' %}">
+    <script src = "{% static 'js/cyberw.js'%}" defer></script>
+
+</head>
+<body onload="getLocation()">
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">HCKR</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{% url 'wabout'%}">About</a></li>
+                    <li><a href="{% url 'soon' %}">Services</a></li>
+                    <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                    <li><a href="{% url 'soon' %}">Free Courses</a></li>
+                    <li><a href="{% url 'register' %}">Premium access</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="#" onclick="openPopup('https://journal.ahima.org/page/federal-cybersecurity-efforts-seek-to-improve-protection-of-health-data')">Be cyber aware</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Welcome to HCKR</h2>
+            <p>Your gateway to ethical hacking and cybersecurity solutions.</p>
+            <a href="#" class="btn" onclick="openPopup('{% url 'soon' %}')">Explore Services</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 HCKR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="whatsapp-widget">
+        <button id="whatsapp-btn"><img src="{% static 'images/wh.png'%}" alt="WhatsApp Logo"></button>
+        <div id="whatsapp-panel" class="whatsapp-panel">
+            <div class="whatsapp-header">
+                <span>Send Daniel a message</span>
+                <button id="close-btn">&times;</button>
+            </div>
+            <div class="whatsapp-body">
+                <textarea id="message-input" placeholder="Type your message..."></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="fileModal">
+        <div id="fileContent"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</body>
+</html>
